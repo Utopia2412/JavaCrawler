@@ -1,0 +1,36 @@
+2025-05-21 23:57:42.157424+08:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "RUNTIME CHARACTER VARYING(50)": "U&'134\\5206\\949f(\\4e2d\\56fd\\5927\\9646) / 138\\5206\\949f(\\5a01\\5c3c\\65af\\7535\\5f71... (67)"; SQL statement:
+INSERT INTO enhanced_movies VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) [22001-224]
+2025-05-21 23:57:42.173009+08:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "RUNTIME CHARACTER VARYING(50)": "U&'207\\5206\\949f / 160\\5206\\949f(\\56fd\\9645\\7248) / 150\\5206\\949f(\\82f1\\56fd\\521... (80)"; SQL statement:
+INSERT INTO enhanced_movies VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) [22001-224]
+2025-05-21 23:57:42.214147+08:00 jdbc[3]: exception
+org.h2.jdbc.JdbcBatchUpdateException: Value too long for column "RUNTIME CHARACTER VARYING(50)": "U&'134\\5206\\949f(\\4e2d\\56fd\\5927\\9646) / 138\\5206\\949f(\\5a01\\5c3c\\65af\\7535\\5f71... (67)"; SQL statement:
+INSERT INTO enhanced_movies VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) [22001-224]
+	at org.h2.jdbc.JdbcPreparedStatement.executeBatch(JdbcPreparedStatement.java:1282)
+	at EnhancedDataCrawler.saveToDatabase(EnhancedDataCrawler.java:289)
+	at EnhancedDataCrawler.main(EnhancedDataCrawler.java:74)
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "RUNTIME CHARACTER VARYING(50)": "U&'134\\5206\\949f(\\4e2d\\56fd\\5927\\9646) / 138\\5206\\949f(\\5a01\\5c3c\\65af\\7535\\5f71... (67)"; SQL statement:
+INSERT INTO enhanced_movies VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) [22001-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:518)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.getValueTooLongException(DbException.java:334)
+	at org.h2.value.Value.getValueTooLongException(Value.java:2594)
+	at org.h2.value.Value.convertToVarchar(Value.java:1282)
+	at org.h2.value.Value.convertTo(Value.java:1138)
+	at org.h2.value.Value.convertForAssignTo(Value.java:1113)
+	at org.h2.table.Column.validateConvertUpdateSequence(Column.java:369)
+	at org.h2.table.Table.convertInsertRow(Table.java:936)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:167)
+	at org.h2.command.dml.Insert.update(Insert.java:135)
+	at org.h2.command.dml.DataChangeStatement.update(DataChangeStatement.java:74)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:256)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:216)
+	at org.h2.jdbc.JdbcPreparedStatement.executeBatchElement(JdbcPreparedStatement.java:1330)
+	at org.h2.jdbc.JdbcPreparedStatement.executeBatch(JdbcPreparedStatement.java:1276)
+	at EnhancedDataCrawler.saveToDatabase(EnhancedDataCrawler.java:289)
+	at EnhancedDataCrawler.main(EnhancedDataCrawler.java:74)
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "RUNTIME CHARACTER VARYING(50)": "U&'207\\5206\\949f / 160\\5206\\949f(\\56fd\\9645\\7248) / 150\\5206\\949f(\\82f1\\56fd\\521... (80)"; SQL statement:
+INSERT INTO enhanced_movies VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) [22001-224]
